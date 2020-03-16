@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>userHome</title>
+
+<meta name="description" content="tabs and accordions" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="assets/img/favicon.png"
+	type="image/x-icon">
+
+<!--Basic Styles-->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+<link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+<link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+
+<!--Fonts-->
+<!-- <link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css"> -->
+
+<!--Beyond styles-->
+<link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+<link href="assets/css/demo.min.css" rel="stylesheet" />
+<link href="assets/css/typicons.min.css" rel="stylesheet" />
+<link href="assets/css/animate.min.css" rel="stylesheet" />
+<link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+<!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+<script src="assets/js/skins.min.js"></script>
+<script src="assets/js/jquery-2.0.3.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#open").click(function() {
+			window.location.href = "index";
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#uppwad").click(function() {
+			window.location.href = "updatepwad";
+		});
+	});
+</script>
+</head>
+<body>
+<div style="position:absolute;left:660px;top:10px">
+	<h2>在线调查问卷系统</h2>
+</div>
+	<div class="page-body">
+		<div class="row">
+			<div class="col-lg-12 col-sm-12 col-xs-12"style="position:absolute;left:430px;top:100px">
+				<h5 class="row-title before-palegreen">
+					<i class="fa fa-align-justify palegreen"></i>普通用户
+				</h5>
+				<div class="row">
+					<div class="col-lg-6 col-sm-6 col-xs-12">
+						<div class="tabbable">
+							<ul class="nav nav-tabs nav-justified" id="myTab5">
+								<li class="active"><a data-toggle="tab" href="#home5">
+										个人中心 </a></li>
+
+								<li class="tab-red"><a data-toggle="tab" href="#profile5">
+										填写问卷 </a></li>
+
+								
+							</ul>
+
+							<div class="tab-content">
+								<div id="home5" class="tab-pane in active">
+									<p>你好！</p>
+									<div class="buttons-preview">
+									<button id="uppwad"type="button" class="btn btn-darkorange active">修改密码</button>
+									</div>
+								</div>
+
+								<div id="profile5" class="tab-pane">
+									<p>你可以做以下问卷：</p>
+									<div class="buttons-preview">
+									<button id="open"type="button" class="btn btn-blue active">打开问卷</button>
+								</div>
+								</div>
+								
+
+			
+
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Basic Scripts-->
+	<script src="assets/js/jquery-2.0.3.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

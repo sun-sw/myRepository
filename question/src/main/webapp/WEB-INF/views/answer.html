@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>Answer</title>
+<meta name="description" content="Answer" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="assets/js/jquery-2.0.3.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#submit").click(function() {
+			var sendData = $("#form").serialize(); 
+			$.ajax({
+		        async : false,    //表示请求是否异步处理
+		        type : "post",    //请求类型
+		        url : "answer/submit",//请求的 URL地址
+		        dataType : "json",//返回的数据类型
+		        data: sendData, //发送数据
+		        success: function (data) {
+		        	if(data.status == 'success') {
+		        		// 成功
+		        		alert(data.message);
+		        		window.location.href="question/success";
+		        	} else {
+		        		// 失败
+		        		alert(data.message);
+		        	}
+		        },
+		        error:function (data) {
+		            alert("连接服务器失败");
+		        }
+		    });
+		});
+	});
+
+</script>
+</head>
+<div style="position:absolute;left:660px;top:20px">
+	<h2>在线调查问卷系统</h2>
+</div>
+<body>
+	<div style="position:absolute;left:450px;top:80px">
+		<h3>${question.name}</h3>
+		<form id="form" method="POST">
+		<input type="hidden" name="q_id" value="${question.id}"/>
+			<table>
+				<tr><td>问题1:</td></tr>
+				<tr>
+					<td>
+						${question.col1} 
+					</td>
+					<td>
+					<#if "${question.col1_type!}" == "0">
+						<#list question.col1_answer?split("|||") as name>
+							<input type="radio" name="col1" value="${name}">
+					         ${name}
+						</#list>
+					<#else>
+						<input name="col1_answer"/>
+					</#if>
+					</td>
+				</tr>
+				<tr><td>问题2:</td></tr>
+				<tr>
+					<td>
+						${question.col2!} 
+					</td>
+					<td>
+					<#if "${question.col2_type!}" == "0">
+						<#list question.col2_answer?split("|||") as name>
+							<input type="radio" name="col2" value="${name}">
+					         ${name}
+						</#list>
+					<#else>
+						<input name="col2_answer"/>
+					</#if>
+					</td>
+				</tr>
+				<tr><td>问题3:</td></tr>
+				<tr>
+					<td>
+						${question.col3!} 
+					</td>
+					<td>
+					<#if "${question.col3_type!}" == "0">
+						<#list question.col3_answer?split("|||") as name>
+							<input type="radio" name="col3" value="${name}">
+					         ${name}
+						</#list>
+					<#else>
+						<input name="col3_answer"/>
+					</#if>
+					</td>
+				</tr>
+				<tr><td>问题4:</td></tr>
+				<tr>
+					<td>
+						${question.col4!} 
+					</td>
+					<td>
+					<#if "${question.col4_type!}" == "0">
+						<#list question.col4_answer?split("|||") as name>
+							<input type="radio" name="col4" value="${name}">
+					         ${name}
+						</#list>
+					<#else>
+						<input name="col4_answer"/>
+					</#if>
+					</td>
+				</tr>
+				<tr><td>问题5:</td></tr>
+				<tr>
+					<td>
+						${question.col5!} 
+					</td>
+					<td>
+					<#if "${question.col5_type!}" == "0">
+						<#list question.col5_answer?split("|||") as name>
+							<input type="radio" name="col5" value="${name}">
+					         ${name}
+						</#list>
+					<#else>
+						<input name="col5_answer"/>
+					</#if>
+					</td>
+				</tr>
+				<tr><td>问题6:</td></tr>
+				<tr>
+					<td>
+						${question.col6!} 
+					</td>
+					<td>
+					<#if "${question.col6_type!}" == "0">
+						<#list question.col6_answer?split("|||") as name>
+							<input type="radio" name="col6" value="${name}">
+					         ${name}
+						</#list>
+					<#else>
+						<input name="col6_answer"/>
+					</#if>
+					</td>
+				</tr>
+				<tr><td>问题7:</td></tr>
+				<tr>
+					<td>
+						${question.col7!} 
+					</td>
+					<td>
+					<#if "${question.col7_type!}" == "0">
+						<#list question.col7_answer?split("|||") as name>
+							<input type="radio" name="col7" value="${name}">
+					         ${name}
+						</#list>
+					<#else>
+						<input name="col7_answer"/>
+					</#if>
+					</td>
+				</tr>
+				<tr><td>问题8:</td></tr>
+				<tr>
+					<td>
+						${question.col8!} 
+					</td>
+					<td>
+					<#if "${question.col8_type!}" == "0">
+						<#list question.col8_answer?split("|||") as name>
+							<input type="radio" name="col8" value="${name}">
+					         ${name}
+						</#list>
+					<#else>
+						<input name="col8_answer"/>
+					</#if>
+					</td>
+				</tr>
+				<tr><td>问题9:</td></tr>
+				<tr>
+					<td>
+						${question.col9!} 
+					</td>
+					<td>
+					<#if "${question.col9_type!}" == "0">
+						<#list question.col9_answer?split("|||") as name>
+							<input type="radio" name="col9" value="${name}">
+					         ${name}
+						</#list>
+					<#else>
+						<input name="col9_answer"/>
+					</#if>
+					</td>
+				</tr>
+				<tr><td>问题10:</td></tr>
+				<tr>
+					<td>
+						${question.col10!} 
+					</td>
+					<td>
+					<#if "${question.col10_type!}" == "0">
+						<#list question.col10_answer?split("|||") as name>
+							<input type="radio" name="col10" value="${name}">
+					         ${name}
+						</#list>
+					<#else>
+						<input name="col10_answer"/>
+					</#if>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<div class="buttons-preview">
+		<button id="submit"type="button" class="btn btn-darkorange active">提交</button>
+		</div>
+	</div>
+</body>
+</html>

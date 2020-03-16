@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+Beyond Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--Head-->
+<head>
+    <meta charset="utf-8" />
+    <title>Deluser Page</title>
+
+    <meta name="description" content="register page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--Fonts-->
+    <!-- <link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css"> -->
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="assets/js/skins.min.js"></script>
+    <script src="assets/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+	$(document).ready(function() {
+		$("#deluser").click(function() {
+			var sendData = $("#del_form").serialize();
+			$.ajax({
+		        async : true,    //表示请求是否异步处理
+		        type : "post",    //请求类型
+		        url : "deluser/submit",//请求的 URL地址
+		        dataType : "json",//返回的数据类型
+		        data: sendData, //发送数据
+		        success: function (data) {
+		        	if(data.status == 'success') {
+		        		// 成功
+		        		alert(data.message);
+		    
+		        		}
+		        	 else {
+		        		// 失败
+		        		alert(data.message);
+		        		
+		        	}
+		        	
+		        },
+		        error:function (data) {
+		            alert("连接服务器失败");
+		        }
+		});
+	});
+});	
+</script>
+</head>
+<!--Head Ends-->
+<!--Body-->
+<body>
+<div style="position:absolute;left:660px;top:50px">
+	<h2>在线调查问卷系统</h2>
+</div>
+    <div class="register-container animated fadeInDown">
+        <div class="registerbox bg-white">
+            <div class="registerbox-title">删除用户</div>
+
+            <div class="registerbox-caption ">请输入要删除用户的信息</div>
+            <form id="del_form"action="register" method="POST">
+	            <div class="registerbox-textbox">
+	                <input type="text" class="form-control" name="username"  placeholder="用户名" />
+	            </div>
+	            
+            </form>
+       <div class="registerbox-submit">
+				<button id="deluser" type="button" class="btn btn-primary btn-block">Submit</button>
+			</div>
+    </div>
+</div>
+ 
+
+</body>
+<!--Body Ends-->
+</html>

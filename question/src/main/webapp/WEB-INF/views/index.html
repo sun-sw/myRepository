@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>Question</title>
+<meta name="description" content="Question" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="assets/js/jquery-2.0.3.min.js"></script>
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+<link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+<link href="assets/css/animate.min.css" rel="stylesheet" />
+</head>
+<body>
+<div style="position:absolute;left:660px;top:50px">
+	<h2>在线调查问卷系统</h2>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-12">
+      <div class="well with-header with-footer"style="position:absolute;left:560px;top:150px">
+          <div class="header bordered-success">
+          </div>
+          <div class="table-scrollable">
+              <table class="table table-striped table-bordered table-hover">
+                  <thead>
+                      <tr>
+                    	<th scope="col">
+                            	问卷
+                         </th>
+                         <th scope="col">
+                            	统计
+                         </th>
+                         
+                      </tr>
+                  </thead>
+                <tbody>
+                  	<#list questions as question>
+		<tr>
+			<td><a href="answer_question?id=${question.id}">开始回答《${question.name!}》</a></td>
+		
+			<td><a href="answer_count?qid=${question.id}">查看结果《${question.name!}》</a></td>
+		</tr>
+		</#list>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+</div>
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/beyond.min.js"></script>
+</body>
+</html>
